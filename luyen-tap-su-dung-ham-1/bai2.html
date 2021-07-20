@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Tăng một số lên một đơn vị</h1>
+    <input id="inputNumber" type="number" oninput="change()">
+    <p>
+      Kết quả:
+      <span id="result"></span>
+    </p>
+    <script>
+        function numberToNumber1(number) {
+          let result = number + 1;
+          return result;
+        }
+        function change() {
+          document.getElementById("result").innerHTML = numberToNumber1(parseInt(document.getElementById("inputNumber").value));
+        }
+    </script>
+</body>
+</html>

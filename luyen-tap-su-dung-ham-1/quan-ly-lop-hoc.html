@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+      let c0621h1 = ["Định", "Tú", "Chính", "Ý"];
+      let stt = [1, 2, 3, 4];
+      function showList(classArray, numericalOrder) {
+        let data = ""
+        data += "<table><tr><td>STT</td><td>Name</td></tr>"
+        for (let i = 0; i < classArray.length; i++) {
+          data += "<tr><td>" + classArray[i] + "</td><td>" + numericalOrder[i] + "</td></tr>";
+        }
+        data += "</table>";
+        return data;
+      }
+      document.write(showList(stt, c0621h1));
+    </script>
+</body>
+</html>
