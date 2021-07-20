@@ -1,0 +1,39 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isPrime(number) {
+            let i = 2;
+            if (number === 2 || number === 3) {
+                return true;
+            }
+            if (number === 0 || number === 1) {
+                return false;
+            }
+
+            while (i < number) {
+                if (number % i === 0) {
+                    return false;
+                }
+                i++;
+            }
+            return true;
+        }
+        console.log(isPrime(9974))
+        for (let i = 0; i < 10000; i++) {
+            if (isPrime(i)) {
+                document.write(i + "</br>");
+            }
+
+        }
+
+
+    </script>
+</body>
+</html>
