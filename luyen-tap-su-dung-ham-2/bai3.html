@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Tính giai thừa một số nguyên dương</h1>
+    <p oninput="culcalate()">
+      Nhập vào số:
+      <input id="number" type="number">
+    </p>
+    <p>
+      Kết quả:
+      <span id="result"></span>
+    </p>
+    <script>
+      function isFactorial(number) {
+        let result = 1;
+        for (let i = 1; i <= number; i++) {
+          result *= i;
+        }
+        return result
+      }
+      function culcalate() {
+        let result = isFactorial(document.getElementById("number").value);
+        document.getElementById("result").innerHTML = result;
+      }
+    </script>
+</body>
+</html>

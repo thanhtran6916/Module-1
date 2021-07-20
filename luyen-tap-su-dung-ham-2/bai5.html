@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Kiểm tra số có giá trị nhỏ nhất</h1>
+    <input id="input" type="text" onchange="culcalate()">
+    <p id="result"></p>
+    <script>
+      function checkMin(number) {
+        let min = parseInt(number[0])
+        for (let i = 0; i < number.length; i++) {
+          if (min > parseInt(number[i])) {
+            min = parseInt(number[i]);
+          }
+        }
+        return min;
+      }
+      function culcalate() {
+        let inputNumber = document.getElementById("input").value;
+        let myArray = inputNumber.split(",");
+        console.log(myArray)
+        let result = checkMin(myArray);
+        document.getElementById("result").innerHTML = result;
+      }
+
+    </script>
+</body>
+</html>

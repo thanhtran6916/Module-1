@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title id="a">Title</title>
+</head>
+<body>
+    <input id="input" type="text" oninput="returnResult()">
+    <p id="result"></p>
+    <script>
+      function checkNumber(myArray) {
+          for (let i = 0; i < myArray.length; i++) {
+              if (isNaN(myArray[i])) {
+                  return false;
+              }
+          }
+          return true;
+      }
+      function returnResult() {
+          let a = document.getElementById("input").value;
+          let myArray = a.split("");
+          if (checkNumber(myArray)) {
+              document.getElementById("result").innerHTML = "Đây là số";
+          } else {
+              document.getElementById("result").innerHTML = "Đây không phải là số";
+          }
+      }
+    </script>
+</body>
+</html>

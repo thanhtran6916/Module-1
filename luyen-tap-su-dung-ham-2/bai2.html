@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Tính diện tích hình chữ nhật</h1>
+    <p>
+      Chiều dài:
+      <input id="widthNumber" type="text">
+      mm
+    </p>
+    <p>
+      Chiều rộng:
+      <input id="heightNumber" type="text">
+      mm
+    </p>
+    <p>
+      Kết quả:
+      <span id="resultRectangular"></span>
+    </p>
+    <button type="button" onclick="rectangular()">Tính</button>
+
+    <h1>Tính diện tích hình tròn</h1>
+    <p>
+      Bán kính:
+      <input id="radius" type="text">
+      mm
+    </p>
+    <p>
+      Kết quả:
+      <span id="resultCircle"></span>
+    </p>
+    <button type="button" onclick="crircke()">Tính</button>
+    <script>
+      function isCircleArea(number) {
+        return number * number * 3.14;
+      }
+      function isRectangularArea(height, width) {
+        return height * width;
+      }
+
+      function crircke() {
+        let radiusNumber = document.getElementById("radius").value;
+        let result = isCircleArea(radiusNumber);
+        document.getElementById("resultCircle").innerHTML = result + " mm2";
+      }
+      function rectangular() {
+        let width = document.getElementById("widthNumber").value;
+        let height = document.getElementById("heightNumber").value;
+        let result = isRectangularArea(width, height);
+        document.getElementById("resultRectangular").innerHTML = result + " mm2";
+
+      }
+    </script>
+</body>
+</html>

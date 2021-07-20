@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input id="number" type="text" oninput="culcalate()">
+    <p id="result"></p>
+    <script>
+      function countSquare(number) {
+        return number * number;
+      }
+      function culcalate() {
+        let inputNumber = document.getElementById("number").value;
+        let result = countSquare(inputNumber);
+        document.getElementById("result").innerHTML = result;
+      }
+    </script>
+</body>
+</html>

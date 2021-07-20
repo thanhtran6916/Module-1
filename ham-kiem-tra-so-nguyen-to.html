@@ -1,58 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
 <body>
     <script>
-        // let a = 2;
-        // let n = 2;
-        // let counter = 0;
-        // let flag = false;
-        // while (counter <= 1000) {
-        //     while (n < a) {
-        //         if (a % n === 0) {
-        //             flag = false;
-        //             break;
-        //         } else {
-        //             flag = true;
-        //         }
-        //         n++;
-        //     }
-        //     if (flag === true || a === 2) {
-        //         console.log(n);
-        //         counter++;
-        //     }
-        //     a++;
-        //     n = 2;
-        //
-        // }
-
-
         function isPrime(number) {
-            let flag = false;
-            for (let i = 2; i < number; i++) {
-                if (number % i == 0) {
-                    flag = false;
-                    break;
-                } else {
-                    flag = true;
+            let i = 2;
+            if (number === 2 || number === 3) {
+                return true;
+            }
+            if (number === 0 || number === 1) {
+                return false;
+            }
+
+            while (i < number) {
+                if (number % i === 0) {
+                    return false;
                 }
+                i++;
             }
-            if (flag == true || number == 2) {
-                console.log(number + " là số nguyên tố!");
-            } else {
-                console.log(number + " không phải là số nguyên tố!");
+            return true;
+        }
+        console.log(isPrime(9974))
+        for (let i = 0; i < 10000; i++) {
+            if (isPrime(i)) {
+                document.write(i + "</br>");
             }
+
         }
-
-        isPrime(110);
-        for (let i = 0; i < 1000; i++) {
-            isPrime(i);
-        }
-
-
 
 
     </script>
