@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Tahoma;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            text-align: center;
+            margin: 20px 0;
+        }
+        form .input-and-add-product {
+            height: 36px;
+        }
+        .input-and-add-product input {
+            height: 30px;
+            width: 220px;
+            margin-left: 8px;
+            outline: none;
+            border: solid 1px #000;
+            border-radius: 6px;
+        }
+        button {
+            width: 68px;
+            height: 32px;
+            background-color: #50af50;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+        .add-btn {
+            width: 94px;
+            height: 34px;
+            margin-left: 16px;
+        }
+        table {
+            margin: 20px auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Add New Product</h1>
+        <form action="">
+            <div class="input-and-add-product">
+                <input id="input" type="text">
+                <button class="add-btn" onclick="add()" type="button">Add</button>
+            </div>
+        </form>
+        <div id="data"></div>
+    </div>
+
+    <script>
+        let products = [];
+
+        function addProduct(product, addProductName) {
+            product.push(addProductName);
+            return product;
+        }
+        function editProduct(product, index) {
+            for (let i = 0; i < product.length; i++) {
+                if (i == index) {
+                    product[i] = prompt("Sửa tên sản phẩm")
+                    return product;
+                }
+            }
+        }
+        function deleteProduct(product, index) {
+            let newProduct = [];
+            let count = 0
+            for (let i = 0; i < product.length; i++) {
+                if (index > i) {
+                    newProduct[count] = product[i];
+                    count++;
+                }
+                if (i > index) {
+                    newProduct[count] = product[i];
+                    count++;
+                }
+            }
+            return newProduct;
+        }
+// Bước 4
+        function displayProduc(product) {
+            let data = "<table><tr><th width='160px' height='32px'>Product Name</th><th>" + product.length + "product</th></tr> ";
+            for (let i = 0; i < product.length; i++) {
+                data += "<tr><td width='160px' height='32px'>" + product[i] + "</td><td><button type='button' onclick='edit(" + i + ")'>Edit</button></td><td><button type='button' onclick='deleteProduc(" + i + ")'>Delete</button></td></tr>"
+            }
+            data += "</table>";
+            document.getElementById("data").innerHTML = data;
+        }
+        displayProduc(products);
+
+// Bước 5
+        function add() {
+            let inputAddProduct = document.getElementById("input").value;
+            addProduct(products, inputAddProduct);
+            displayProduc(products);
+            document.getElementById("input").value = "";
+        }
+// Bước 6
+        function edit(i) {
+            let index = i;
+            editProduct(products, index);
+            displayProduc(products);
+        }
+// Bươc 7
+        function deleteProduc(i) {
+            products = deleteProduct(products, i);
+            displayProduc(products);
+            console.log(products);
+        }
+    </script>
+</body>
+</html>
