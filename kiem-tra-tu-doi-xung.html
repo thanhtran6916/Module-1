@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let a = "aaaaaaaaaaaaaaaahaaaaaaaaaaaaaaaa";
+        function isPalindrome(s) {
+            let myArray = s.split("");
+            let firstIndexWord = 0;
+            let lastIndexWord = myArray.length - 1;
+            // while (firstIndexWord < lastIndexWord) {
+            //     if(check(myArray[firstIndexWord], myArray[lastIndexWord])){
+            //         firstIndexWord++;
+            //         lastIndexWord--;
+            //         check(myArray[firstIndexWord], myArray[lastIndexWord])
+            //     } else {
+            //         return false
+            //     }
+            // }
+            // return true;
+            return check(myArray[firstIndexWord], myArray[lastIndexWord], firstIndexWord, lastIndexWord)
+        }
+
+        function check(a,b, c, d) {
+            while (c < d){
+                if(a === b){
+                    c++
+                    d--
+                    check(a, b, c, d)
+                } else {
+                    return false
+                }
+            }
+            return true
+        }
+        console.log(isPalindrome(a))
+
+
+    </script>
+</body>
+</html>
